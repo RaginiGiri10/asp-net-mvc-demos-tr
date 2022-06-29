@@ -1,0 +1,34 @@
+﻿
+@model ProductMVCApp.ViewModel.CreateViewModel
+<h2>Add Product</h2>
+<hr />
+
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post))
+{
+    
+
+    <div class="form-group">        
+        @Html.LabelFor(model => model.ProductName)
+        @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model=>model.ProductName,string.Empty,new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductPrice)
+        @Html.TextBoxFor(model => model.ProductPrice, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(model => model.ProductPrice, string.Empty, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductOrigin)
+        @Html.TextBoxFor(model => model.ProductOrigin, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ProductOrigin, string.Empty, new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+
+
+

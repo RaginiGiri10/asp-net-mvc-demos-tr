@@ -1,0 +1,58 @@
+﻿@model ProductMVCApp.ViewModel.DeleteProductViewModel
+
+<h2>Remove Product</h2>
+<hr />
+
+
+@using (Html.BeginForm("Delete", "Product", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-sm-3">
+            Id
+        </div>
+        <div class="col-sm-3">
+            @Model.Id
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            Product Name
+        </div>
+        <div class="col-sm-3">
+            @Model.Name
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            Product Amount
+        </div>
+        <div class="col-sm-3">
+            @Model.Amount
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            Product Origin
+        </div>
+        <div class="col-sm-3">
+            @Model.Origin
+        </div>
+    </div>
+
+  
+
+    <div class="row">
+        <div class=" col-sm-12">
+            <button type="submit" class="btn btn-primary">Delete</button>
+            @Html.ActionLink("Cancel", "Index", "Product", new { @class = "btn btn-primary" })
+        </div>
+       
+    </div>
+    
+
+}
+
